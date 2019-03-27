@@ -18,5 +18,10 @@ public class HomeController {
         System.out.println(nome);
         return mv;
     }
+
+    @RequestMapping("form.html")
+    String form(){
+        return "form";
+    }
     
 }
