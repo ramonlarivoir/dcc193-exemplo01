@@ -11,10 +11,11 @@ import org.springframework.web.servlet.ModelAndView;
 public class HomeController {
 
     @RequestMapping("index.html")
-    ModelAndView home(String nome){
+    ModelAndView home(String nome, Integer idade){
         ModelAndView mv = new ModelAndView();
         mv.setViewName("home");
         mv.addObject("nome", nome);
+        mv.addObject("idade", idade);
         System.out.println(nome);
         return mv;
     }
