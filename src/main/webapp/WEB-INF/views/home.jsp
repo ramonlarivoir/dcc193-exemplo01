@@ -7,6 +7,6 @@
 </head>
 <body>
     <h1>Hello World!</h1>
-    <p>Bem vindo ${nome} (${idade} anos) ao curso de Introdução ao Spring Boot</p>
+    <p>Bem vindo ${pessoa.nome} (${pessoa.idade} anos) ao curso de Introdução ao Spring Boot</p>
 </body>
 </html>
