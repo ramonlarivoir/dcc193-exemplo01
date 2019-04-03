@@ -64,7 +64,7 @@ public class Pessoa {
 
     @Override
     public String toString() {
-        return this.nome+" "+this.idade+" anos";
+        return "["+this.id+"] "+this.nome+" "+this.idade+" anos";
     }
 
 }
