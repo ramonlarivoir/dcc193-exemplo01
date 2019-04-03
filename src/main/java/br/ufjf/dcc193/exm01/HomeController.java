@@ -36,5 +36,23 @@ public class HomeController {
         mv.addObject("galera", pessoas);
         return mv;
     }
+
+    @RequestMapping("novo.html")
+    ModelAndView novo(Pessoa p){
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("novo");
+        repPessoa.save(p);
+        mv.addObject("pessoa", p);
+        return mv;
+    }
+
+    @RequestMapping("remove.html")
+    ModelAndView remove(Pessoa p){
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("remove");
+        repPessoa.deleteById(p.getId());
+        mv.addObject("pessoa", p);
+        return mv;
+    }
     
 }

@@ -11,6 +11,10 @@
     <ol>
         <c:forEach var="pessoa" items="${galera}">
             <li value="${pessoa.id}">${pessoa.nome} ${pessoa.idade} anos</li>
+            <form action="remove.html" method="POST">
+                <input type="hidden" name="id" value="${pessoa.id}">
+                <input type="submit" value="Excluir">
+            </form>
         </c:forEach>
     </ol>
 </body>
