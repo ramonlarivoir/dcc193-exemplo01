@@ -4,12 +4,17 @@ package br.ufjf.dcc193.exm01;
  * Pessoa
  */
 public class Pessoa {
+    private Long id;
     private String nome;
     private Integer idade;
     
     Pessoa() {
         this.nome = "";
         this.idade = 0;
+    }
+    Pessoa(String nome, Integer idade) {
+        this.nome = nome;
+        this.idade = idade;
     }
     /**
      * @param nome the nome to set
@@ -35,4 +40,22 @@ public class Pessoa {
     public Integer getIdade() {
         return idade;
     }
+    /**
+     * @return the id
+     */
+    public Long getId() {
+        return id;
+    }
+    /**
+     * @param id the id to set
+     */
+    public void setId(Long id) {
+        this.id = id;
+    }
+    
+    @Override
+    public String toString() {
+        return this.nome+" "+this.idade+" anos";
+    }
+
 }
