@@ -1,9 +1,18 @@
 package br.ufjf.dcc193.exm01;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  * Pessoa
  */
+
+ @Entity
 public class Pessoa {
+    @Id
+    @GeneratedValue(strategy = GenerationType.TABLE)
     private Long id;
     private String nome;
     private Integer idade;
@@ -52,7 +61,7 @@ public class Pessoa {
     public void setId(Long id) {
         this.id = id;
     }
-    
+
     @Override
     public String toString() {
         return this.nome+" "+this.idade+" anos";
