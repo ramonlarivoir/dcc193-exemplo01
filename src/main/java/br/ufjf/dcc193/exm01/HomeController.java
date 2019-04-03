@@ -1,5 +1,8 @@
 package br.ufjf.dcc193.exm01;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -9,6 +12,8 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 public class HomeController {
+    @Autowired
+    PessoaRepository repPessoa;
 
     @RequestMapping("index.html")
     ModelAndView home(Pessoa p){
@@ -21,6 +26,15 @@ public class HomeController {
     @RequestMapping("form.html")
     String form(){
         return "form";
+    }
+
+    @RequestMapping("pessoas.html")
+    ModelAndView pessoas(){
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("pessoa-list");
+        List<Pessoa> pessoas = repPessoa.findAll();
+        mv.addObject("galera", pessoas);
+        return mv;
     }
     
 }
