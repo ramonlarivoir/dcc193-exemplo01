@@ -12,7 +12,7 @@ import javax.persistence.Id;
  @Entity
 public class Pessoa {
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     private String nome;
     private Integer idade;
